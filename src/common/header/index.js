@@ -18,6 +18,7 @@ import {
   SearchInfoItem,
   SearchInfoList
 } from "./style";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   getListArea() {
@@ -72,7 +73,10 @@ class Header extends Component {
     const { focused, handleInputFocus, handleInputBlur, list } = this.props;
     return (
       <HeaderWrapper>
-        <Logo href="/" />
+        <Link to="/">
+          <Logo />
+        </Link>
+
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载app</NavItem>
@@ -114,7 +118,7 @@ const mapStateToProps = state => {
 const mapDispathToProps = dispatch => {
   return {
     handleInputFocus(list) {
-      (list.size === 0) && dispatch(actionCreators.getList());
+      list.size === 0 && dispatch(actionCreators.getList());
 
       dispatch(actionCreators.searchFocus());
     },

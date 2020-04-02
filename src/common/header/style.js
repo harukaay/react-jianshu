@@ -18,7 +18,7 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.div`
   position: absolute;
   top: 0;
   left: 0;
